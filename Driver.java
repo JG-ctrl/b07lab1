@@ -48,8 +48,8 @@ public class Driver {
         Polynomial p5 = new Polynomial(c5, e5);
         p5.poly_sort();
         p5.print_poly();
-        File p_file = new File("poly_file.txt");
-        Polynomial p6 = new Polynomial(p_file);
-        p6.print_poly();
+        // File p_file = new File("poly_file.txt");
+        // Polynomial p6 = new Polynomial(p_file);
+        // p6.print_poly();
     }
 }
