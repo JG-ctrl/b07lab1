@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 
 public class Polynomial {
     // fields
@@ -51,6 +52,29 @@ public class Polynomial {
             coeff[i] = c;
             exp[i] = e;
         }
+    }
+
+    public void saveToFile(String filename) throws IOException {
+        PrintStream file = new PrintStream(filename);
+
+        // String to_write;
+
+        this.poly_sort();
+
+        if (exp[0] == 0) {
+            file.print(coeff[0]);
+        } else {
+            file.print(coeff[0] + "x" + exp[0]);
+        }
+
+        for (int i = 1; i < exp.length; i++) {
+            if (coeff[i] > 0) {
+                file.print("+");
+            }
+            file.print(coeff[i] + "x" + exp[i]);
+        }
+        file.println();
+        file.close();
     }
 
     public Polynomial add(Polynomial to_add) {
@@ -153,10 +177,22 @@ public class Polynomial {
         if (exp.length != coeff.length || exp == null)
             System.out.println("dne");
 
-        int i = exp.length - 1;
-        System.out.print(coeff[i] + "x^" + exp[i]);
-        for (i = exp.length - 2; i >= 0; i--) {
-            System.out.print(" + " + coeff[i] + "x^" + exp[i]);
+        // int i = exp.length - 1;
+        // System.out.print(coeff[i] + "x^" + exp[i]);
+        // for (i = exp.length - 2; i >= 0; i--) {
+        // System.out.print(" + " + coeff[i] + "x^" + exp[i]);
+        // }
+        if (exp[0] == 0) {
+            System.out.print(coeff[0]);
+        } else {
+            System.out.print(coeff[0] + "x" + exp[0]);
+        }
+
+        for (int i = 1; i < exp.length; i++) {
+            if (coeff[i] > 0) {
+                System.out.print("+");
+            }
+            System.out.print(coeff[i] + "x" + exp[i]);
         }
         System.out.println();
     }
