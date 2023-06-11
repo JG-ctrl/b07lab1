@@ -55,12 +55,12 @@ public class Polynomial {
     }
 
     public void saveToFile(String filename) throws IOException {
-        PrintStream file = new PrintStream(filename);
-
         // String to_write;
 
         if (exp == null || coeff == null || exp.length != coeff.length)
             return;
+
+        PrintStream file = new PrintStream(filename);
 
         this.poly_sort();
 
