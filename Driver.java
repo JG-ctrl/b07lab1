@@ -1,3 +1,5 @@
+import java.io.File;
+
 public class Driver {
     public static void main(String[] args) throws Exception {
         double[] c1 = { 6, -2, 5 };
@@ -48,8 +50,10 @@ public class Driver {
         p5.print_poly();
         // File p_file = new File("poly_file.txt");
         // Polynomial p6 = new Polynomial(p_file);
+        // System.out.println("yo");
         // p6.print_poly();
 
-        p5.saveToFile("poly_file.txt");
+        // p5.saveToFile("poly_file.txt");
+        // System.out.println(Arrays.toString("5-3x2+7x8".split("(?=[-+])")));
     }
 }

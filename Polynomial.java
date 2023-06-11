@@ -36,7 +36,7 @@ public class Polynomial {
             return;
         }
 
-        String[] p_arry = p_str.split("[-+]"); // split at - or + so each element is a term
+        String[] p_arry = p_str.split("(?=[-+])"); // split at - or + so each element is a term
         coeff = new double[p_arry.length];
         exp = new int[p_arry.length];
 
