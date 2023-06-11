@@ -59,6 +59,9 @@ public class Polynomial {
 
         // String to_write;
 
+        if (exp == null || coeff == null || exp.length != coeff.length)
+            return;
+
         this.poly_sort();
 
         if (exp[0] == 0) {
@@ -84,7 +87,7 @@ public class Polynomial {
 
         // special cases
         // this is 0
-        if (exp == null)
+        if (exp == null && to_add.exp != null)
             return to_add;
         // to_add is 0
         if (to_add.exp == null)
